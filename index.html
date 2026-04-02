@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proposta Comercial Exclusiva — Cyberdoc × Yago Silveira</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --gold: #c9a84c;
+      --gold-dark: #a8862e;
+      --gold-light: #dfc98a;
+      --gold-pale: #f7f0e0;
+      --gold-ghost: #fdf9ef;
+      --cream: #fafaf8;
+      --white: #ffffff;
+      --ink: #1a1a1a;
+      --ink-mid: #3a3a3a;
+      --muted: #7a7a72;
+      --border: #ede8da;
+      --border-light: #f3ede0;
+      --red: #b83232;
+      --red-bg: #fef5f5;
+      --orange: #b86020;
+      --orange-bg: #fef7f0;
+      --green: #2a8a52;
+      --green-bg: #f0faf4;
+      --green-border: #b8dfc8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Paper texture overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='250'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='250' height='250' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: 0.022;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--ink);
+    }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 10.5px;
+      font-weight: 500;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      border: 1px solid var(--gold-light);
+      background: var(--gold-ghost);
+      padding: 5px 14px 5px 12px;
+      border-radius: 100px;
+    }
+
+    /* ── DIVIDER with ornament ── */
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 40px;
+    }
+    .ornament-divider::before,
+    .ornament-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+    }
+    .ornament-divider::before {
+      background: linear-gradient(to right, transparent, var(--gold-light));
+    }
+    .ornament-divider::after {
+      background: linear-gradient(to left, transparent, var(--gold-light));
+    }
+    .ornament-divider .gem {
+      color: var(--gold-light);
+      font-size: 9px;
+      margin: 0 16px;
+      line-height: 1;
+      transform: rotate(45deg);
+      display: inline-block;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header .badge {
+      margin-bottom: 22px;
+    }
+
+    .section-header h2 {
+      font-size: clamp(30px, 4vw, 42px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .section-header h2 em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+
+    .section-header .sub {
+      font-size: 14.5px;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* ── FADE-IN ANIMATION ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.22, 0.61, 0.36, 1),
+                  transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.2s; }
+    .fade-up.delay-3 { transition-delay: 0.3s; }
+    .fade-up.delay-4 { transition-delay: 0.4s; }
+
+    /* ==============================
+       HERO
+       ============================== */
+    .hero {
+      padding: 128px 0 108px;
+      text-align: center;
+      position: relative;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%);
+    }
+
+    .hero-eyebrow {
+      margin-bottom: 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 5.5vw, 58px);
+      font-weight: 700;
+      line-height: 1.12;
+      max-width: 680px;
+      margin: 0 auto 28px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+
+    .hero .hero-sub {
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 460px;
+      margin: 0 auto;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    .hero-rule {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 72px;
+    }
+
+    .hero-rule span {
+      display: block;
+      height: 1px;
+      width: 48px;
+      background: var(--gold-light);
+    }
+
+    .hero-rule .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ==============================
+       QUEM SOMOS
+       ============================== */
+    .profile-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.05), 0 1px 4px rgba(0,0,0,0.04);
+      padding: 44px;
+      margin-bottom: 52px;
+    }
+
+    .profile-top {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-bottom: 28px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: white;
+      flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(168,134,46,0.25);
+    }
+
+    .profile-meta h3 {
+      font-size: 19px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .profile-meta .role {
+      font-size: 13px;
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .profile-bio {
+      font-size: 15px;
+      color: var(--ink-mid);
+      line-height: 1.82;
+    }
+
+    .profile-bio strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .clients-label {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .clients-label strong {
+      color: var(--ink-mid);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .client-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 18px;
+      text-align: center;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .client-item:hover {
+      border-color: var(--gold-light);
+      box-shadow: 0 2px 16px rgba(201,168,76,0.1);
+    }
+
+    .client-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin: 0 auto 14px;
+    }
+
+    .client-item strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      font-family: 'Playfair Display', serif;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .client-item span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ==============================
+       DIAGNÓSTICO
+       ============================== */
+    .diag-three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .diag-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      padding: 28px 24px;
+    }
+
+    .diag-card.is-red { border-top: 3px solid var(--red); }
+    .diag-card.is-orange { border-top: 3px solid var(--orange); }
+    .diag-card.is-green { border-top: 3px solid var(--green); border-color: var(--green-border); }
+
+    .diag-card-icon {
+      font-size: 20px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .diag-card h4 {
+      font-size: 15.5px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .diag-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .diag-card p strong { color: var(--ink-mid); }
+
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .compare-box {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      padding: 28px 28px 32px;
+    }
+
+    .compare-box.now { border-left: 3px solid var(--red); }
+    .compare-box.later { border-left: 3px solid var(--green); }
+
+    .compare-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: var(--ink-mid);
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .status-dot.red { background: var(--red); }
+    .status-dot.green { background: var(--green); }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .compare-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--ink-mid);
+      line-height: 1.5;
+    }
+
+    .li-mark {
+      flex-shrink: 0;
+      font-size: 13px;
+      margin-top: 1px;
+    }
+
+    /* ==============================
+       A SOLUÇÃO
+       ============================== */
+    .services {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .svc {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      padding: 28px 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 24px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .svc:hover {
+      border-color: var(--gold-light);
+      box-shadow: 0 4px 28px rgba(201,168,76,0.1);
+    }
+
+    .svc-icon {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--gold-ghost);
+      border: 1px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .svc-icon svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--gold-dark);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .svc-body h4 {
+      font-size: 16.5px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .svc-body p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    /* ==============================
+       COMO FUNCIONA / TIMELINE
+       ============================== */
+    .timeline {
+      position: relative;
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 50%;
+      top: 28px;
+      bottom: 28px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--gold-light), var(--gold-light) 85%, transparent);
+      transform: translateX(-50%);
+    }
+
+    .tl-item {
+      display: grid;
+      grid-template-columns: 1fr 64px 1fr;
+      align-items: start;
+      margin-bottom: 44px;
+    }
+
+    .tl-item:last-of-type { margin-bottom: 0; }
+
+    .tl-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+      padding: 28px;
+    }
+
+    .tl-item.left .tl-card { grid-column: 1; text-align: right; }
+    .tl-item.right .tl-card { grid-column: 3; }
+    .tl-item.left .tl-gap { grid-column: 3; }
+    .tl-item.right .tl-gap { grid-column: 1; }
+
+    .tl-center {
+      grid-column: 2;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tl-node {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 0 0 5px var(--gold-ghost), 0 2px 12px rgba(168,134,46,0.2);
+    }
+
+    .sprint-no {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 3px;
+    }
+
+    .sprint-period {
+      font-size: 11px;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .tl-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .tl-card .tl-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--gold-dark);
+      margin-bottom: 12px;
+    }
+
+    .tl-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .tl-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 11.5px;
+      color: var(--green);
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    .tl-tag svg {
+      width: 10px;
+      height: 10px;
+      stroke: var(--green);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .delivery-note {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 26px;
+      margin-top: 48px;
+      font-size: 14px;
+      color: var(--muted);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    .delivery-note strong {
+      color: var(--ink-mid);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    /* ==============================
+       INVESTIMENTO
+       ============================== */
+    .inv-wrap {
+      max-width: 520px;
+      margin: 0 auto 52px;
+    }
+
+    .inv-card {
+      background: var(--white);
+      border: 1.5px solid var(--gold-light);
+      border-radius: 16px;
+      box-shadow:
+        0 0 0 6px rgba(201,168,76,0.04),
+        0 8px 40px rgba(0,0,0,0.07);
+      padding: 56px 52px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .inv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold-light), var(--gold), var(--gold-light), transparent);
+    }
+
+    .inv-card h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 36px;
+      color: var(--ink);
+    }
+
+    .price-block {
+      margin-bottom: 24px;
+    }
+
+    .price-currency {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--gold-dark);
+      vertical-align: top;
+      margin-top: 10px;
+      display: inline-block;
+    }
+
+    .price-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      font-weight: 700;
+      color: var(--gold-dark);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .price-note {
+      font-size: 13.5px;
+      color: var(--muted);
+      max-width: 340px;
+      margin: 0 auto 36px;
+      line-height: 1.65;
+    }
+
+    .inv-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 0 0 28px;
+    }
+
+    .inc-list {
+      list-style: none;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .inc-list li {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      font-size: 14px;
+      color: var(--ink-mid);
+    }
+
+    .check-wrap {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .check-wrap svg {
+      width: 11px;
+      height: 11px;
+      stroke: var(--green);
+      fill: none;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .terms {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .term {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .term-bullet {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ==============================
+       FOOTER
+       ============================== */
+    .footer {
+      padding: 52px 0;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: #b5ae9e;
+      letter-spacing: 0.04em;
+    }
+
+    .price-was {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-bottom: 6px;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    /* ==============================
+       RESPONSIVE
+       ============================== */
+    @media (max-width: 720px) {
+      .container { padding: 0 22px; }
+      .section { padding: 72px 0; }
+      .ornament-divider { padding: 0 22px; }
+
+      .hero { padding: 88px 0 72px; }
+      .hero h1 { font-size: 32px; }
+      .hero .hero-sub { font-size: 15px; }
+
+      .profile-card { padding: 28px 24px; }
+      .clients-grid { grid-template-columns: 1fr 1fr; }
+
+      .diag-three { grid-template-columns: 1fr; }
+      .comparison { grid-template-columns: 1fr; }
+
+      .svc { flex-direction: column; gap: 16px; padding: 24px; }
+
+      /* Mobile timeline */
+      .timeline-line { left: 22px; }
+      .tl-item {
+        grid-template-columns: 48px 1fr;
+      }
+      .tl-item.left .tl-card,
+      .tl-item.right .tl-card {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: left;
+      }
+      .tl-center {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .tl-gap { display: none; }
+
+      .inv-card { padding: 36px 28px; }
+      .price-value { font-size: 52px; }
+      .terms { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 420px) {
+      .clients-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-eyebrow fade-up">
+        <span class="badge">🔒 Proposta Comercial Exclusiva</span>
+      </div>
+      <h1 class="fade-up delay-1">
+        Transforme a Operação<br>Comercial da <em>Cyberdoc</em>
+      </h1>
+      <p class="hero-sub fade-up delay-2">
+        Automatize o atendimento a leads, elimine o follow&#8209;up manual e foque no que importa: fechar vendas.
+      </p>
+      <div class="hero-rule fade-up delay-3">
+        <span></span>
+        <div class="dot"></div>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament-divider"><span class="gem">■</span></div>
+
+  <!-- ════════════════ QUEM SOMOS ════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge">Quem Somos</span>
+        <h2>Expertise em <em>Transformação Digital</em></h2>
+      </div>
+
+      <div class="profile-card fade-up">
+        <div class="profile-top">
+          <div class="avatar">YS</div>
+          <div class="profile-meta">
+            <h3>Yago Silveira</h3>
+            <span class="role">Especialista em Automação &amp; Inteligência Comercial</span>
+          </div>
+        </div>
+        <p class="profile-bio">
+          Olá! Sou especialista em transformar <strong>operações manuais e cansativas</strong> em ecossistemas de vendas autônomos. Meu foco é <strong>desenhar processos</strong> que liberam as equipes das tarefas repetitivas, permitindo que foquem na estratégia e na entrega. Utilizo <strong>Inteligência Artificial</strong> para garantir que nenhum lead esfrie e que o processo administrativo aconteça nos bastidores, de forma invisível e fluida.
+        </p>
+      </div>
+
+      <p class="clients-label fade-up">
+        Já tive o prazer de colaborar com grandes nomes do mercado,<br>
+        gerando <strong>resultados de escala e eficiência</strong> para:
+      </p>
+
+      <div class="clients-grid fade-up">
+        <div class="client-item">
+          <div class="client-dot"></div>
+          <strong>Sérgio Costa</strong>
+          <span>Fundador PagSeguro</span>
+        </div>
+        <div class="client-item">
+          <div class="client-dot"></div>
+          <strong>Rafael Milagre</strong>
+          <span>Fundador Viver de IA</span>
+        </div>
+        <div class="client-item">
+          <div class="client-dot"></div>
+          <strong>Yago Martins</strong>
+          <span>Mentor G4 Educação</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament-divider"><span class="gem">■</span></div>
+
+  <!-- ════════════════ DIAGNÓSTICO ════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge">🔍 Diagnóstico</span>
+        <h2>Entendendo o Desafio<br>da <em>Cyberdoc</em></h2>
+        <p class="sub">Baseado em nossa reunião de diagnóstico</p>
+      </div>
+
+      <div class="diag-three">
+        <div class="diag-card is-red fade-up delay-1">
+          <span class="diag-card-icon">⚡</span>
+          <h4>O Gargalo Atual</h4>
+          <p>A equipe de vendas responde orçamentos <strong>manualmente</strong> pelo WhatsApp. Leads de alto valor esfriam enquanto a operação está ocupada com a produção.</p>
+        </div>
+        <div class="diag-card is-orange fade-up delay-2">
+          <span class="diag-card-icon">⚠️</span>
+          <h4>O Risco</h4>
+          <p>Com o crescimento do volume de pedidos, manter o processo atual resultará em <strong>oportunidades perdidas</strong> e sobrecarga da equipe comercial.</p>
+        </div>
+        <div class="diag-card is-green fade-up delay-3">
+          <span class="diag-card-icon">🎯</span>
+          <h4>Situação Futura</h4>
+          <p>Uma operação <strong>blindada</strong>. A IA faz o pré-atendimento, qualifica o lead e o encaminha ao momento certo para um humano concluir a venda.</p>
+        </div>
+      </div>
+
+      <div class="comparison fade-up">
+        <div class="compare-box now">
+          <div class="compare-head">
+            <span class="status-dot red"></span>
+            Cenário Atual
+          </div>
+          <ul class="compare-list">
+            <li><span class="li-mark" style="color:var(--red);">✕</span> Orçamentos respondidos manualmente</li>
+            <li><span class="li-mark" style="color:var(--red);">✕</span> Sem pipeline de leads organizado</li>
+            <li><span class="li-mark" style="color:var(--red);">✕</span> Follow&#8209;up simplesmente não acontece</li>
+            <li><span class="li-mark" style="color:var(--red);">✕</span> Perda de leads por demora na resposta</li>
+            <li><span class="li-mark" style="color:var(--red);">✕</span> 100% do tempo em operação</li>
+          </ul>
+        </div>
+        <div class="compare-box later">
+          <div class="compare-head">
+            <span class="status-dot green"></span>
+            Com Automação
+          </div>
+          <ul class="compare-list">
+            <li><span class="li-mark" style="color:var(--green);">✓</span> IA responde em segundos 24/7</li>
+            <li><span class="li-mark" style="color:var(--green);">✓</span> CRM atualizado em tempo real</li>
+            <li><span class="li-mark" style="color:var(--green);">✓</span> Follow&#8209;up inteligente e autônomo</li>
+            <li><span class="li-mark" style="color:var(--green);">✓</span> Leads capturados sem esforço</li>
+            <li><span class="li-mark" style="color:var(--green);">✓</span> Foco total em fechar vendas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament-divider"><span class="gem">■</span></div>
+
+  <!-- ════════════════ A SOLUÇÃO ════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge">📦 Entregáveis</span>
+        <h2>A <em>Solução Completa</em></h2>
+        <p class="sub">Serviços e tecnologias para transformar a operação comercial da Cyberdoc</p>
+      </div>
+
+      <div class="services">
+
+        <div class="svc fade-up delay-1">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1 1 .03 2.798-1.362 2.798H4.16c-1.393 0-2.363-1.799-1.362-2.798L4.2 15.3"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h4>Agente SDR com IA</h4>
+            <p>Construção e treinamento de um agente de IA para qualificar leads vindos dos canais de aquisição, respondendo instantaneamente com linguagem humanizada.</p>
+          </div>
+        </div>
+
+        <div class="svc fade-up delay-2">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 5.625c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h4>Preenchimento Automático de CRM</h4>
+            <p>O SDR registra o lead no CRM assim que o primeiro contato é feito e move automaticamente entre as fases do pipeline de qualificação.</p>
+          </div>
+        </div>
+
+        <div class="svc fade-up delay-3">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h4>Follow Up Automatizado</h4>
+            <p>O SDR identifica "furos" no funil — quem pediu orçamento mas não fechou e/ou quem parou de responder — e faz o follow&#8209;up com autonomia para reaquecer o lead.</p>
+          </div>
+        </div>
+
+        <div class="svc fade-up delay-4">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h4>Integração com Base de Dados</h4>
+            <p>O agente acessa a base de produtos e serviços da Cyberdoc em tempo real para construir escopos de orçamento durante a conversa — sem intervenção humana na fase de levantamento.</p>
+          </div>
+        </div>
+
+        <div class="svc fade-up delay-1">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h4>Handover to Human</h4>
+            <p>Quando o lead está qualificado e pronto para fechar, o agente reconhece o momento e transfere a conversa para um vendedor humano — com todo o histórico e contexto já reunidos. A equipe entra apenas para o que importa: a venda.</p>
+          </div>
+        </div>
+
+        <div class="svc fade-up delay-2">
+          <div class="svc-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/>
+            </svg>
+          </div>
+          <div class="svc-body">
+            <h4>Omnichannel (Centralização)</h4>
+            <p>Instalação do Chatwoot para centralizar o WhatsApp de toda a equipe em uma única tela — visibilidade total das conversas, histórico unificado e controle operacional sem esforço.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <div class="ornament-divider"><span class="gem">■</span></div>
+
+  <!-- ════════════════ COMO FUNCIONA ════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge">⚙️ Metodologia</span>
+        <h2>Como <em>Funciona</em></h2>
+        <p class="sub">Assessoria de Implementação dividida em Sprints Quinzenais</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <!-- Sprint 01 — LEFT -->
+        <div class="tl-item left fade-up">
+          <div class="tl-card">
+            <div class="sprint-no">Sprint 01</div>
+            <div class="sprint-period">Dias 1 – 15</div>
+            <h4>Infraestrutura &amp; Pré-Treinamento</h4>
+            <div class="tl-sub">Construção da base</div>
+            <p>Montamos toda a infraestrutura técnica: integrações, base de dados, CRM e os fluxos do agente. A IA é treinada com o contexto da Cyberdoc — produtos, linguagem e processos — antes de qualquer teste.</p>
+            <div class="tl-tag">
+              <svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>
+              Agente configurado e pronto para testes
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-node">01</div>
+          </div>
+          <div class="tl-gap"></div>
+        </div>
+
+        <!-- Sprint 02 — RIGHT -->
+        <div class="tl-item right fade-up">
+          <div class="tl-gap"></div>
+          <div class="tl-center">
+            <div class="tl-node">02</div>
+          </div>
+          <div class="tl-card">
+            <div class="sprint-no">Sprint 02</div>
+            <div class="sprint-period">Dias 16 – 30</div>
+            <h4>Teste &amp; Validação Interna</h4>
+            <div class="tl-sub">O agente nas mãos da Cyberdoc</div>
+            <p>A equipe da Cyberdoc testa o agente em ambiente real e aponta os ajustes necessários. Nada vai a público sem a aprovação de vocês — cada refinamento é implementado com base no uso real.</p>
+            <div class="tl-tag">
+              <svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>
+              Aprovação da Cyberdoc antes do lançamento
+            </div>
+          </div>
+        </div>
+
+        <!-- Sprint 03 — LEFT -->
+        <div class="tl-item left fade-up">
+          <div class="tl-card">
+            <div class="sprint-no">Sprint 03</div>
+            <div class="sprint-period">Dias 31 – 45</div>
+            <h4>Otimização &amp; Lançamento</h4>
+            <div class="tl-sub">Expansão + Go&#8209;Live</div>
+            <p>Com os ajustes validados, expandimos para todos os canais e realizamos o Go&#8209;Live. A passagem de bastão garante que a equipe opere o sistema com autonomia desde o primeiro dia.</p>
+            <div class="tl-tag">
+              <svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg>
+              Operação entregue e rodando 100%
+            </div>
+          </div>
+          <div class="tl-center">
+            <div class="tl-node">03</div>
+          </div>
+          <div class="tl-gap"></div>
+        </div>
+
+      </div>
+
+      <p class="delivery-note fade-up">
+        Prazo total de <strong>30 a 45 dias</strong>, variando conforme a quantidade de ajustes identificados na validação. O sistema só vai a produção com a <strong>aprovação da Cyberdoc</strong>.
+      </p>
+
+    </div>
+  </section>
+
+  <div class="ornament-divider"><span class="gem">■</span></div>
+
+  <!-- ════════════════ INVESTIMENTO ════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge">💎 Investimento</span>
+        <h2><em>Investimento</em></h2>
+        <p class="sub">Proposta de valor única para transformação completa</p>
+      </div>
+
+      <div class="inv-wrap fade-up">
+        <div class="inv-card">
+          <h3>Operação Comercial Automatizada</h3>
+
+          <div class="price-block">
+            <p class="price-was">De R$ 20.000</p>
+            <div class="price-badge">Condição especial</div><br>
+            <span class="price-currency">R$</span><span class="price-value">&nbsp;12.000</span>
+          </div>
+
+          <p class="price-note">Solução completa para automatizar o processo comercial da Cyberdoc de ponta a ponta.</p>
+
+          <div class="inv-divider"></div>
+
+          <ul class="inc-list">
+            <li>
+              <span class="check-wrap"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>
+              Agente SDR com IA (Qualificação e Resposta)
+            </li>
+            <li>
+              <span class="check-wrap"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>
+              Preenchimento Automático de CRM
+            </li>
+            <li>
+              <span class="check-wrap"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>
+              Follow Up Automatizado
+            </li>
+            <li>
+              <span class="check-wrap"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>
+              Integração com Base de Dados (Escopo de Orçamento)
+            </li>
+            <li>
+              <span class="check-wrap"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>
+              Handover to Human (Transferência para Vendedor)
+            </li>
+            <li>
+              <span class="check-wrap"><svg viewBox="0 0 12 12"><path d="M2 6l3 3 5-5"/></svg></span>
+              Omnichannel — Chatwoot
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="terms fade-up">
+        <div class="term"><span class="term-bullet"></span>Emissão de Nota Fiscal inclusa</div>
+        <div class="term"><span class="term-bullet"></span>Prazo de validade da proposta: 7 dias</div>
+        <div class="term"><span class="term-bullet"></span>Condição: 50% D+1 e 50% D+30</div>
+        <div class="term"><span class="term-bullet"></span>Custos de terceiros (API WhatsApp/Servidor) pagos diretamente pelo cliente</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="ornament-divider"><span class="gem">■</span></div>
+  <footer class="footer">
+    <div class="container">
+      <p>Proposta exclusiva preparada por Yago Silveira &nbsp;·&nbsp; Válida por 7 dias &nbsp;·&nbsp; Confidencial</p>
+    </div>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
